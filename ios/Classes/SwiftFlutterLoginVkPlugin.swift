@@ -125,7 +125,7 @@ public class SwiftFlutterLoginVkPlugin: NSObject, FlutterPlugin {
     
     private func logIn(result: @escaping FlutterResult, permissions: [String]) {
         _loginDelegate.startLogin(result: result)
-        VKSdk.authorize(permissions)
+        VKSdk.authorize(permissions, with: VKAuthorizationOptions.disableProviders)
     }
     
     private func logOut(result: @escaping FlutterResult) {
